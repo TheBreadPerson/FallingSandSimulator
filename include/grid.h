@@ -24,8 +24,12 @@ Particle** cells; // Dynamic 2D array
 Grid* create_grid(uint16_t width, uint16_t height, uint8_t cell_size);
 void destroy_grid(Grid* grid);
 
+Particle init_particle(Color color, uint32_t id, float lifetime);
 Particle get_cell(Grid* grid, uint16_t x, uint16_t y);
 void set_cell(Grid* grid, uint16_t x, uint16_t y, Particle particle);
 void swap_cells(Grid* grid, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
+_Bool cell_in_bounds(Grid* grid, uint16_t x, uint16_t y);
+
+uint16_t particle_count(Grid * grid);
 
 #endif

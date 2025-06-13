@@ -20,7 +20,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(raylib)
 
 # Add the executable directly
-add_executable(CEngine "source/main.c" "source/renderer.c" "source/grid.c" "source/simulation.c")
+add_executable(CEngine "source/main.c" "source/renderer.c" "source/grid.c" "source/simulation.c" "source/util.c")
 
 # Link raylib to your executable
 target_link_libraries(CEngine PRIVATE raylib)

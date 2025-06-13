@@ -56,6 +56,15 @@ void destroy_grid(Grid* grid)
     }
 }
 
+Particle init_particle(Color color, uint32_t id, float lifetime)
+{
+    Particle temp_particle;
+    temp_particle.color = color;
+    temp_particle.id = id;
+    temp_particle.lifetime = lifetime;
+    return temp_particle;
+}
+
 Particle get_cell(Grid* grid, uint16_t x, uint16_t y)
 {
     if (x >= grid->width || y >= grid->height)
@@ -90,4 +99,22 @@ void swap_cells(Grid* grid, uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2)
     {
         printf("One or more coordinates are outside of the grid: Can't swap\n");
     }
+}
+
+_Bool cell_in_bounds(Grid* grid, uint16_t x, uint16_t y)
+{
+	return (x < grid->width && y < grid->height);
+}
+
+uint16_t particle_count(Grid* grid)
+{
+    uint16_t count = 0;
+    for (size_t x = 0; x < grid->width; x++)
+    {
+        for (size_t y = 0; y < grid->height; y++)
+        {
+            if (grid->cells[y][x].id != 0) count++;
+        }
+    }
+    return count;
 }
