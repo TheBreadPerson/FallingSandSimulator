@@ -1,4 +1,4 @@
-# Falling Sand Engine
+# Falling Sand Simulator
 
 2D Falling Sand Simulator made in C & Raylib
 
